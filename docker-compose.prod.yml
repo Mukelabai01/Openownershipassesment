@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-submission_db}
+      POSTGRES_USER: ${POSTGRES_USER:-submission}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-submission}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./backend
+    restart: always
+    environment:
+      DJANGO_SECRET: ${SECRET_KEY:-change-me}
+      POSTGRES_DB: ${POSTGRES_DB:-submission_db}
+      POSTGRES_USER: ${POSTGRES_USER:-submission}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-submission}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      ALLOWED_HOSTS: "localhost,0.0.0.0"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    restart: always
+    environment:
+      - VITE_API_BASE=http://localhost:8000/api/v1
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

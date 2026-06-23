@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.card {
+  width: 720px;
+  max-width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+.formGroup > label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.formGroup > input,
+.formGroup > textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.submitButton {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 0;
+}
+.cancelButton {
+  background: #e5e7eb;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 0;
+}
+.error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}

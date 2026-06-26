@@ -10,26 +10,26 @@ A production-quality **Django + React** full-stack application demonstrating a c
 
 This project includes all requested components:
 
-- ✅ **1. Architecture**: Service-layer pattern, separation of concerns ([ARCHITECTURE.md](docs/ARCHITECTURE.md))
-- ✅ **2. Database Schema**: Normalized with audit log, UUIDs, JSON fields ([SCHEMA.md](docs/SCHEMA.md))
-- ✅ **3. Django Models**: Application, AuditLog with proper relationships
-- ✅ **4. Serializers**: Input validation, DTOs, custom validation methods
-- ✅ **5. Permissions**: DRF permission classes (CanEditDraft, IsReviewer)
-- ✅ **6. Service Layer**: WorkflowService with state machine, authorization, transactional logic
-- ✅ **7. Audit Logging**: Immutable append-only audit trail with actor tracking
-- ✅ **8. REST API**: Full CRUD + transitions + audit endpoints ([API_SPEC.md](docs/API_SPEC.md))
-- ✅ **9. Error Handling**: Structured error responses, HTTP status mapping, custom exceptions
-- ✅ **10. React Structure**: Pages, hooks, components, API client
-- ✅ **11. Authentication**: JWT with httpOnly refresh cookies, secure token rotation
-- ✅ **12. React Query**: Data fetching, mutations, cache invalidation
-- ✅ **13. Form Validation**: React Hook Form + Zod client-side, serializer server-side
-- ✅ **14. Docker**: docker-compose with db/backend/frontend services
-- ✅ **15. Seed Data**: Management command (python manage.py seed_demo)
-- ✅ **16. Tests**: Unit + integration tests (4 passing, 100% of core logic)
-- ✅ **17. Documentation**: API spec, architecture guide, schema diagram
-- ✅ **18. README**: Quick-start, project structure, key decisions
-- ✅ **19. Self-Critique**: Known limitations, what could score higher
-- ✅ **20. Trade-Offs**: Documented in this README
+- **1. Architecture**: Service-layer pattern, separation of concerns ([ARCHITECTURE.md](docs/ARCHITECTURE.md))
+- **2. Database Schema**: Normalized with audit log, UUIDs, JSON fields ([SCHEMA.md](docs/SCHEMA.md))
+- **3. Django Models**: Application, AuditLog with proper relationships
+- **4. Serializers**: Input validation, DTOs, custom validation methods
+- **5. Permissions**: DRF permission classes (CanEditDraft, IsReviewer)
+- **6. Service Layer**: WorkflowService with state machine, authorization, transactional logic
+- **7. Audit Logging**: Immutable append-only audit trail with actor tracking
+  **8. REST API**: Full CRUD + transitions + audit endpoints ([API_SPEC.md](docs/API_SPEC.md))
+- **9. Error Handling**: Structured error responses, HTTP status mapping, custom exceptions
+- **10. React Structure**: Pages, hooks, components, API client
+- **11. Authentication**: JWT with httpOnly refresh cookies, secure token rotation
+- **12. React Query**: Data fetching, mutations, cache invalidation
+- **13. Form Validation**: React Hook Form + Zod client-side, serializer server-side
+- **14. Docker**: docker-compose with db/backend/frontend services
+- **15. Seed Data**: Management command (python manage.py seed_demo)
+- **16. Tests**: Unit + integration tests (4 passing, 100% of core logic)
+- **17. Documentation**: API spec, architecture guide, schema diagram
+- **18. README**: Quick-start, project structure, key decisions
+- **19. Self-Critique**: Known limitations, what could score higher
+- **20. Trade-Offs**: Documented in this README
 
 ---
 
@@ -281,7 +281,7 @@ pytest -v
 - **Integration Tests**: Full flow—login → create → submit → review → approve (1 end-to-end test)
 - **Auth Tests**: Login, refresh token, /me endpoint (3 passing)
 
-**Result**: 4/4 tests passing ✅
+**Result**: 4/4 tests passing 
 
 ### Test Data
 
@@ -360,37 +360,37 @@ curl -X GET http://localhost:8000/api/v1/applications/{id}/audit/ \
 
 ### Code Quality
 
-✅ Clear naming conventions (no cryptic variable names)
-✅ Single Responsibility Principle (each class has one reason to change)
-✅ Testable architecture (services decoupled from HTTP)
-✅ Type hints in critical paths (frontend TypeScript, Python docstrings)
+Clear naming conventions (no cryptic variable names)
+Single Responsibility Principle (each class has one reason to change)
+Testable architecture (services decoupled from HTTP)
+Type hints in critical paths (frontend TypeScript, Python docstrings)
 
 ### Architecture
 
-✅ Service layer isolation (state machine logic is reusable)
-✅ Transactional consistency (audit log + status change atomic)
-✅ Error handling (structured error responses, HTTP status mapping)
-✅ Separation of concerns (views are thin, business logic in services)
+Service layer isolation (state machine logic is reusable)
+Transactional consistency (audit log + status change atomic)
+Error handling (structured error responses, HTTP status mapping)
+Separation of concerns (views are thin, business logic in services)
 
 ### Testing
 
-✅ Unit + integration tests (4 passing, 100% of core workflow)
-✅ Test data seeding (reproducible test environment)
-✅ Async-friendly (pytest-django for Django testing)
+Unit + integration tests (4 passing, 100% of core workflow)
+Test data seeding (reproducible test environment)
+Async-friendly (pytest-django for Django testing)
 
 ### Documentation
 
-✅ API specification with cURL examples
-✅ Architecture guide explaining design patterns
-✅ Database schema with relationships and indexes
-✅ Deployment considerations (Docker, environment variables)
+API specification with cURL examples
+Architecture guide explaining design patterns
+Database schema with relationships and indexes
+Deployment considerations (Docker, environment variables)
 
 ### Production Readiness
 
-✅ Configurable settings (base/dev/prod)
-✅ Docker support (local + production)
-✅ Database migrations (SQLite local, PostgreSQL production)
-✅ Error handling (no generic 500s, structured errors)
+Configurable settings (base/dev/prod)
+Docker support (local + production)
+Database migrations (SQLite local, PostgreSQL production)
+Error handling (no generic 500s, structured errors)
 
 ---
 
